@@ -30,6 +30,14 @@ macro(export_include_dirs)
         CACHE INTERNAL "${PROJECT_NAME}: Include Directories" FORCE)
 endmacro()
 
+# This macro creates variable ${PROJECT_NAME}_INCLUDE_DIRS with list of includes
+# given to it
+macro(export_libs)
+    set(${PROJECT_NAME}_LIBRARY
+        ${ARGV}
+        CACHE INTERNAL "${PROJECT_NAME}: used and exported libs" FORCE)
+endmacro()
+
 add_subdirectory(lib)
 add_subdirectory(program)
 

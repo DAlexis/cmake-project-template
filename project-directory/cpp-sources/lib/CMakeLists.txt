@@ -22,3 +22,8 @@ export_include_dirs(
     ${${PROJECT_NAME}_USED_INCDIRS}
     # Add here include directories that should be exported, i.e. ${PROJECT_SOURCE_DIR}/include
 )
+
+export_libs(
+    ${PROJECT_NAME}
+    # Add here libraries this one depends from
+)

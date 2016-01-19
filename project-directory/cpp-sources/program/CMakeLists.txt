@@ -15,7 +15,7 @@ include_directories(
 add_executable(${PROJECT_NAME} ${EXE_SOURCES})
 
 target_link_libraries (${PROJECT_NAME}
-    example-lib
+    ${example-lib_LIBRARY}
     ${Boost_PROGRAM_OPTIONS_LIBRARY} # For command line options parsing for example
 )
 
