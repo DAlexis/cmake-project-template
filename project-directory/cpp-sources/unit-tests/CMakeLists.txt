@@ -18,7 +18,7 @@ add_executable(${PROJECT_NAME} ${EXE_SOURCES})
 target_link_libraries (${PROJECT_NAME}
     gtest
     gtest_main
-    example-lib
+    ${example-lib_LIBRARY}
 )
 
 add_test(NAME Library_testing
