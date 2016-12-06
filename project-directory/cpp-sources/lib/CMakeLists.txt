@@ -14,8 +14,17 @@ include_directories(${${PROJECT_NAME}_USED_INCDIRS})
 
 add_library(${PROJECT_NAME} STATIC ${LIB_SOURCE})
 
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_rvalue_references)
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_lambdas)
+
+# This is a way to tell that we need C++11 standart
+#target_compile_features(${PROJECT_NAME} PUBLIC cxx_rvalue_references)
+#target_compile_features(${PROJECT_NAME} PUBLIC cxx_lambdas)
+
+# This is another way. But it will not produce any warnings when 
+# compiler does not support it. See below...
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
+
+# This tell than C++ standard must be supported
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 
 export_include_dirs(
     ${PROJECT_SOURCE_DIR}
